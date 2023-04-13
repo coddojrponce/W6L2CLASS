@@ -41,7 +41,24 @@ class Post:
         self.likes=[]
         
         
+        
 this_post = Post(my_results[0])
 
-print(this_post.img_url)
+data={
+    'id':my_results[0]["users.id"],
+    'first_name':my_results[0]["first_name"],
+    'last_name':my_results[0]["last_name"],
+    'email':my_results[0]["email"],
+    'password':my_results[0]["password"],
+    'created_at':my_results[0]["users.created_at"],
+    'updated_at':my_results[0]["users.updated_at"],
+    
+    }
+
+this_owner = User(data)
+
+this_post.owner = this_owner
+
+
+
 

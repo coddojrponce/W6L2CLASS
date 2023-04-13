@@ -94,8 +94,15 @@ class Post:
         WHERE posts.id=%(id)s;
         """
         results = connectToMySQL(cls.db).query_db(query,data)
+
+        
+        #**************************************************
+
+
         print("*********** printed results")
         print(results)
+        for key in results[0].keys():
+            print(key)
         # print("WE ARE HERE")
         # for key,value in results[0].items():
         #     print(key,"\t\t",value) 
